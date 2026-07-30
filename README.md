@@ -4,6 +4,8 @@ A [Pi](https://pi.dev/) package that gives the TUI a calm, immersive fullscreen 
 
 It clears the terminal screen and scrollback on session start and exit, and pins the editor and footer to the bottom of the screen so the conversation fills the viewport without leftover scrollback above it. Nothing else about Pi's UI is changed.
 
+![pi-fullscreen TUI](./demo.png)
+
 ## Installing
 
 Install from npm:
