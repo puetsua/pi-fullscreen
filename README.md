@@ -30,11 +30,11 @@ pi install git:github.com/puetsua/pi-fullscreen
 }
 ```
 
-An empty or missing file leaves fullscreen enabled. You can also flip it live at any time with the `/fullscreen` command (see below) — that toggle is per-session and does not change this file.
+An empty or missing file leaves fullscreen enabled. You can also flip it live at any time with the `/fullscreen` command (see below).
 
 ## Commands
 
-- `/fullscreen` — toggle the fullscreen layout on or off for the current session. The toggle is per-session and overrides the config default until the session ends; it does not write to `fullscreen.json`.
+- `/fullscreen` — toggle the fullscreen layout on or off. The change applies immediately to the current session **and** is written to `fullscreen.json`, so it persists across restarts.
 
 ## Compatibility
 

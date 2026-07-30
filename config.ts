@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { getAgentDir } from "@earendil-works/pi-coding-agent";
 
@@ -27,6 +27,18 @@ export function loadConfig(ctx: ExtensionContext, fileName: string = "fullscreen
 
   cache.set(key, config);
   return config;
+}
+
+/**
+ * Persist `enabled` to the global config file, preserving any other keys already present,
+ * and update the in-memory cache so subsequent `loadConfig` calls reflect the new value.
+ */
+export function setEnabled(ctx: ExtensionContext, enabled: boolean, fileName: string = "fullscreen.json"): void {
+  const path = join(getAgentDir(), fileName);
+  const raw = readRawConfig(path);
+  raw.enabled = enabled;
+  writeFileSync(path, `${JSON.stringify(raw, null, 2)}\n`, "utf8");
+  cache.set(`${ctx.cwd}\u0000${fileName}`, { enabled });
 }
 
 function readRawConfig(path: string): { enabled?: unknown } {

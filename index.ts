@@ -2,7 +2,7 @@ import { VERSION } from "@earendil-works/pi-coding-agent";
 import { truncateToWidth } from "@earendil-works/pi-tui";
 
 import { BottomFiller } from "./filler";
-import { loadConfig } from "./config";
+import { loadConfig, setEnabled } from "./config";
 
 import type { ExtensionAPI, ExtensionCommandContext, ExtensionContext, Theme } from "@earendil-works/pi-coding-agent";
 import type { TUI } from "@earendil-works/pi-tui";
@@ -71,10 +71,12 @@ export default function registerFullscreen(pi: ExtensionAPI): void {
     if (active) {
       filler.dispose();
       active = false;
+      setEnabled(ctx, false);
       ctx.ui.notify("fullscreen off", "info");
     } else {
       filler.mount();
       active = true;
+      setEnabled(ctx, true);
       ctx.ui.notify("fullscreen on", "info");
     }
 
