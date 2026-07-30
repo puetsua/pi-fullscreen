@@ -1,0 +1,43 @@
+{
+  "name": "pi-fullscreen",
+  "version": "0.1.0",
+  "description": "Pi package that gives the TUI a calm, immersive fullscreen layout like Claude Code: clears the screen and scrollback on start/exit and pins the editor and footer to the bottom.",
+  "keywords": [
+    "pi-coding-agent",
+    "pi-package",
+    "tui",
+    "fullscreen"
+  ],
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "files": [
+    "index.ts",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": ">=0.81.0",
+    "@earendil-works/pi-ai": ">=0.81.0",
+    "@earendil-works/pi-coding-agent": ">=0.81.0",
+    "@earendil-works/pi-tui": ">=0.81.0"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": ">=0.81.0",
+    "@earendil-works/pi-ai": ">=0.81.0",
+    "@earendil-works/pi-coding-agent": ">=0.81.0",
+    "@earendil-works/pi-tui": ">=0.81.0",
+    "@types/node": "*",
+    "typescript": "^5.6.0"
+  }
+}
