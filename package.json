@@ -29,7 +29,8 @@
   "pi": {
     "extensions": [
       "./index.ts"
-    ]
+    ],
+    "image": "https://raw.githubusercontent.com/puetsua/pi-fullscreen/main/demo.png"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
