@@ -20,10 +20,9 @@ pi install git:github.com/puetsua/pi-fullscreen
 
 ## Configuration
 
-`pi-fullscreen` is **enabled by default** once installed. To turn it off, set `enabled: false` in a config file:
+`pi-fullscreen` is **enabled by default** once installed. To turn it off by default, set `enabled: false` in the global config file:
 
-- Global: `~/.pi/agent/fullscreen.json`
-- Project: `<project>/.pi/fullscreen.json` (overrides global)
+- `~/.pi/agent/fullscreen.json`
 
 ```json
 {
@@ -31,7 +30,11 @@ pi install git:github.com/puetsua/pi-fullscreen
 }
 ```
 
-An empty or missing file leaves fullscreen enabled. Project config overrides the global file.
+An empty or missing file leaves fullscreen enabled. You can also flip it live at any time with the `/fullscreen` command (see below) — that toggle is per-session and does not change this file.
+
+## Commands
+
+- `/fullscreen` — toggle the fullscreen layout on or off for the current session. The toggle is per-session and overrides the config default until the session ends; it does not write to `fullscreen.json`.
 
 ## Compatibility
 
