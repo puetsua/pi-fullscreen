@@ -69,11 +69,11 @@ To cut a release:
 
 ```bash
 # bump version in package.json to match the tag, commit, then:
-git tag v0.2.0
-git push origin v0.2.0
+git tag 0.2.0
+git push origin 0.2.0
 ```
 
-The workflow uses the tag as the single source of truth for the version, so the version in `package.json` on the tagged commit should match the tag (e.g. `v0.2.0` → `"version": "0.2.0"`).
+The workflow uses the tag as the single source of truth for the version, so the version in `package.json` on the tagged commit should match the tag (e.g. tag `0.2.0` → `"version": "0.2.0"`). Tags are bare semver — no leading `v`.
 
 Use [Conventional Commits](https://www.conventionalcommits.org) (`feat:`, `fix:`, `docs:`, …) so git-cliff can group changelog entries.
 
