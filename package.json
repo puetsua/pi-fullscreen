@@ -9,8 +9,16 @@
     "fullscreen"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "puetsua",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puetsua/pi-fullscreen.git"
+  },
+  "homepage": "https://github.com/puetsua/pi-fullscreen#readme",
+  "bugs": {
+    "url": "https://github.com/puetsua/pi-fullscreen/issues"
+  },
   "files": [
     "index.ts",
     "filler.ts",
@@ -24,7 +32,8 @@
     ]
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "tsc --noEmit"
   },
   "dependencies": {},
   "peerDependencies": {
