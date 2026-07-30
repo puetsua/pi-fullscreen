@@ -55,6 +55,32 @@ The package relies on Pi's internal TUI render path (the root `render` function,
 
 The fullscreen layout was inspired by [pi-spark](https://github.com/zlliang/pi-spark), which bundles this feature together with several others (editor, footer, credits, presets, recap, title, write). This package is a standalone extraction of just the fullscreen behavior for people who want that one thing without the rest.
 
+## Releasing
+
+Releases are published automatically from tags. Pushing a `v*` tag triggers [.github/workflows/release.yml](.github/workflows/release.yml), which:
+
+1. installs and typechecks,
+2. derives the package version from the tag,
+3. generates release notes from conventional commits with [git-cliff](https://git-cliff.org),
+4. publishes to npm (with provenance), and
+5. creates a GitHub Release with the generated notes.
+
+To cut a release:
+
+```bash
+# bump version in package.json to match the tag, commit, then:
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+The workflow uses the tag as the single source of truth for the version, so the version in `package.json` on the tagged commit should match the tag (e.g. `v0.2.0` → `"version": "0.2.0"`).
+
+Use [Conventional Commits](https://www.conventionalcommits.org) (`feat:`, `fix:`, `docs:`, …) so git-cliff can group changelog entries.
+
+### Required secret
+
+Add an npm access token as the `NPM_TOKEN` repository secret (Settings → Secrets and variables → Actions). Use a granular publish token or a classic automation token. npm provenance (`--provenance`) also requires the job's `id-token: write` permission, which is already set in the workflow.
+
 ## License
 
 MIT
