@@ -1,6 +1,6 @@
 {
   "name": "pi-fullscreen",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pi package that gives the TUI a calm, immersive fullscreen layout like Claude Code: clears the screen and scrollback on start/exit and pins the editor and footer to the bottom.",
   "keywords": [
     "pi-coding-agent",
