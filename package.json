@@ -13,7 +13,8 @@
   "type": "module",
   "files": [
     "index.ts",
-    "src",
+    "filler.ts",
+    "config.ts",
     "README.md",
     "LICENSE"
   ],

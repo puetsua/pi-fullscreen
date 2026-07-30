@@ -12,9 +12,9 @@ export interface FullscreenConfig {
 const cache = new Map<string, FullscreenConfig>();
 
 /**
- * Load and validate `fullscreen.json` once per session lifecycle; later calls return the cached
- * result. The project file under `.pi/` overrides the global file under the agent directory at
- * scalar leaves. Missing or empty files leave fullscreen enabled.
+ * Load `fullscreen.json` once per session lifecycle; later calls return the cached result. The
+ * project file under `.pi/` overrides the global file under the agent directory at scalar leaves.
+ * Missing or empty files leave fullscreen enabled.
  */
 export function loadConfig(ctx: ExtensionContext, fileName: string = "fullscreen.json"): FullscreenConfig {
   const key = `${ctx.cwd}\u0000${fileName}`;
